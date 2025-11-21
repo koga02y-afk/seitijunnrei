@@ -1,0 +1,171 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f4f8;
+}
+
+.hero {
+  background-color: aqua;
+  background-size: cover;
+  background-position: center;
+  padding: 3rem 1rem;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+.hero h1 {
+  position: relative;
+  z-index: 1;
+  font-size: 2rem;
+  margin: 0;
+}
+.header {
+  text-align: center;
+  padding: 1rem;
+}
+
+.stamp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+
+@media (max-width: 600px) {
+  .stamp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.stamp-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.stamp-image {
+  width: 100%;
+  height: 120px; /* ← 画像を大きく */
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.visited {
+  opacity: 1;
+}
+
+.unvisited {
+  opacity: 0.6;
+  filter: grayscale(100%);
+}
+
+
+.stamp-detail {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.stamp-detail-image {
+  width: 100%;
+  max-height: 400px; /* ← ここを調整：例 300px, 500px, 60vh など */
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+.modal-content {
+  position: relative; /* これが重要！×ボタンの位置基準になります */
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.modal-content img.stamp-image {
+  width: 100%;
+  max-height: 300px; /* ← 高さを拡大 */
+  object-fit: contain; /* ← 途切れずに収まるように */
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.modal-content {
+  max-width: 500px; /* ← 400px → 500px に拡大して画像に余裕を持たせる */
+}
+
+.close-btn {
+  position: absolute;
+  top: -16px; /* パネルの外に出す */
+  right: -16px;
+  font-size: 24px;
+  background: white;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  line-height: 28px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 1003;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+
+}
+.close-btn:hover {
+  background: #f8f8f8;
+  border-color: #999;
+
+}
+.modal-content {
+  position: relative; /* ← これが必要です */
+}
+.stamp-card:hover {
+  transform: scale(1.03);
+  transition: transform 0.2s ease;
+}
+
+.footer-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px 0;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+
+.footer-nav button {
+  background-color: #fff;
+  border: 2px solid #c6c3c5;
+  color: #C71585;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.footer-nav button:hover {
+  background-color: #FDEFF2;
+}

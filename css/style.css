@@ -1,0 +1,124 @@
+body {
+  font-family: "Yu Gothic", sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 60px; /* フッターの高さ + 余裕分 */
+}
+.hero {
+  background-image: url('images/sakura.jpg'); 
+  background-size: cover;
+  background-position: center;
+  padding: 4rem 1rem;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+}
+
+.hero h1 {
+  position: relative;
+  z-index: 1;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+h1 {
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  width: 80%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #F8BBD0;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  background-color: #fff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* デフォルトは3列（PC） */
+  gap: 20px;
+  justify-items: center;
+}
+
+
+/* スマホサイズでは2列に変更 */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* ← 2列に固定 */
+  gap: 20px;
+  justify-items: center;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #F8BBD0;
+  border-radius: 10px;
+  padding: 10px;
+  width: 180px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.card h3 {
+  margin: 10px 0 5px;
+  color: #C71585;
+}
+
+.card p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+.footer-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px 0;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+
+.footer-nav button {
+  background-color: #fff;
+  border: 2px solid #c6c3c5;
+  color: #C71585;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.footer-nav button:hover {
+  background-color: #FDEFF2;
+}

@@ -1,0 +1,205 @@
+body {
+  font-family: sans-serif;
+  background-color: #f0f8ff;
+  padding: 20px;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#mainLayout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+#leftPanel {
+  flex: 2;
+  min-width: 300px;
+}
+
+#mapPanel {
+  flex: 1;
+  min-width: 300px;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+#mapPanel h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#map {
+  height: 400px;
+  margin-bottom: 80px;
+}
+
+#toggleMapBtn {
+  display: block;
+  margin: 0 auto 20px auto;
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#toggleMapBtn:hover {
+  background-color: #357ab8;
+}
+
+#dayTabs {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#dayTabs button {
+  margin: 5px;
+  padding: 10px 15px;
+  background: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#dayTabs button:hover {
+  background-color: #357ab8;
+}
+
+#spotSelector {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#animeSelect {
+  padding: 8px;
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+#spotList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.spot-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  text-align: center;
+  width: 120px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.spot-card:hover {
+  transform: scale(1.05);
+}
+
+.spot-card img {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.schedule-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.schedule-left img {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+.schedule-right {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.schedule-right input[type="time"] {
+  padding: 5px;
+  font-size: 1em;
+}
+
+.schedule-right button {
+  padding: 5px 8px;
+  font-size: 1em;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.schedule-right button:hover {
+  background-color: #ddd;
+}
+
+/* カスタム画像アイコンの見た目調整 */
+.leaflet-marker-icon.custom-icon {
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.spot-thumb {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-right: 8px;
+}
+
+.schedule-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+#backBtn {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  color: #333;
+  font-size: 16px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: background-color 0.2s;
+}
+
+#backBtn:hover {
+  background-color: #f0f0f0;
+}

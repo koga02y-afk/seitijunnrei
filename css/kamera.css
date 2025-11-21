@@ -1,0 +1,151 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.hero {
+  background-color: aqua;
+  background-size: cover;
+  background-position: center;
+  padding: 3rem 1rem;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+.hero h1 {
+  position: relative;
+  z-index: 1;
+  font-size: 2rem;
+  margin: 0;
+}
+.header {
+  text-align: center;
+  padding: 1rem;
+}
+
+.scene-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* 横3固定 */
+  gap: 10px;
+  padding: 0 12px 20px;
+}
+.scene-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 2px solid #ccc;
+  cursor: pointer;
+}
+
+#detail-panel {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 24px; /* ← ここで余白を確保 */
+  box-sizing: border-box;
+}
+
+.hidden { display: none !important; }
+
+.panel-content {
+  background: #fff;
+  padding: 16px;
+  position: relative;
+  width: 100%;          /* ← 92%から100%にしてもOK */
+  max-width: 640px;
+  border-radius: 10px;
+}
+
+
+/* 右上 × ／ 左上 戻る */
+.close-btn, .back-btn {
+  position: absolute;
+  top: 10px;
+  font-size: 18px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+.close-btn { right: 12px; }
+.back-btn { left: 12px; }
+
+.compare-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 上：アニメシーン（基準サイズ） */
+.scene img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
+/* 中央：操作 */
+.controls {
+  margin: 10px 0;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.controls button, .controls select {
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+/* 下：撮った写真（小さめで横並び 最大3枚） */
+.photos {
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+.photos img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border: 2px solid #ccc;
+}
+
+/* 撮影モードの領域（フルスクリーン時もセンター） */
+.camera-area {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 12px;
+}
+#camera-stream {
+  width: 100%;
+  height: auto;
+  border: 2px solid #ccc;
+}
+
+/* アニメを白黒にする */
+.grayscale { filter: grayscale(100%); }
+
+/* ARキャラの自由移動（タッチ＆ドラッグ想定） */
+.ar-overlay {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 160px;
+  touch-action: none; /* iPhoneでのパンジェスチャと競合しないように */
+  cursor: move;
+}

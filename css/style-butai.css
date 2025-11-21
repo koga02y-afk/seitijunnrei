@@ -1,0 +1,202 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: sans-serif;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.overlay h2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.overlay select {
+  padding: 5px;
+  font-size: 14px;
+}
+
+.footer-nav {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  padding: 10px;
+  overflow-x: auto;
+}
+
+.footer-nav button {
+  white-space: nowrap;
+  padding: 8px 12px;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.footer-nav button:hover {
+  background-color: #f0f0f0;
+}
+
+/* 詳細パネル */
+#infoOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 1002;
+  display: none;
+}
+
+#infoPanel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  max-width: 90%;
+  width: 500px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+#infoPanelTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px; /* ← 余白を広めに確保 */
+  z-index: 1002; /* ← 他の要素より前面に */
+  cursor: pointer;
+  background: transparent;
+}
+
+#closePanel {
+  position: absolute;
+  top: -16px; /* パネルの外に出す */
+  right: -16px;
+  font-size: 24px;
+  background: white;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  line-height: 28px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 1003;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+#closePanel:hover {
+  background: #f8f8f8;
+  border-color: #999;
+}
+
+
+.spot-image {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  border: none;
+  transition: filter 0.3s, border-color 0.3s;
+}
+
+
+.leaflet-marker-icon.visited-marker {
+  border: 3px solid #007bff;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+/* 未訪問マーカーの枠線は緑色 */
+.leaflet-marker-icon.unvisited-marker {
+  border: 3px solid #28a745; /* 緑色 */
+  border-radius: 50%;
+  box-sizing: border-box;
+  background-clip: padding-box;
+  background-color: transparent;
+}
+
+/* 枠線にはフィルターをかけず、画像部分だけ白黒にする */
+.leaflet-marker-icon.unvisited-marker img {
+  filter: grayscale(100%);
+}
+
+
+.spot-image.unvisited {
+  filter: grayscale(100%);
+}
+
+.leaflet-marker-icon.unvisited-marker {
+  filter: grayscale(100%);
+}
+
+/* スマホ対応 */
+@media screen and (max-width: 600px) {
+  .overlay {
+    width: calc(100% - 20px);
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+  }
+
+  .overlay h2 {
+    font-size: 16px;
+  }
+
+  .overlay select {
+    font-size: 16px;
+    width: 100%;
+  }
+
+  #infoPanel {
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .spot-image {
+    max-width: 100%;
+  }
+
+  .footer-nav {
+    bottom: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 8px;
+  }
+
+  .footer-nav button {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  #closePanel {
+    font-size: 28px;
+  }
+}
