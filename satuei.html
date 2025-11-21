@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AR撮影サイト</title>
+    <link rel="stylesheet" href="css/satuei.css">
+</head>
+
+<body>
+    <div id="cameraContainer">
+        <video id="video" autoplay playsinline></video>
+        <img id="arOverlay" src="ar-zombie.png" alt="ARオブジェクト" />
+        <div id="controls">
+            <label for="workSelect">キャラクター</label>
+            <select id="workSelect">
+                <option value="images/minamoto-sakura.png">源さくら</option>
+                <option value="images/nikaidou-saki.png">二階堂サキ</option>
+                <option value="images/mizuno-ai.png">水野愛</option>
+                <option value="images/konno-junko.png">紺野純子</option>
+                <option value="images/yuugiri.png">ゆうぎり</option>
+                <option value="images/hosikawa-riri.png">星川リリィ</option>
+                <option value="images/yamada-tae.png">山田たえ</option>
+            </select>
+            <button id="shootBtn">📷</button>
+            <button id="rotateBtn">🔄</button>
+        </div>
+    </div>
+
+    <canvas id="canvas" style="display:none;"></canvas>
+
+    <!-- JS を外部ファイルから読み込む -->
+    <script src="js/satuei.js"></script>
+</body>
+
+</html>

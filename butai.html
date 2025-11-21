@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>聖地巡礼マップ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- あなたのCSS -->
+    <link rel="stylesheet" href="css/style-butai.css">
+
+    <!-- Leaflet 本体 -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <!-- MarkerCluster プラグイン -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+    <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+
+    <!-- Routing Machine -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.min.js"></script>
+</head>
+
+<body>
+    <!-- 作品選択UI -->
+    <div class="overlay" id="overlay">
+        <h2>聖地巡礼マップ</h2>
+        <select id="workSelect">
+            <option value="">すべての作品を表示</option>
+            <option value="zombielandsaga">ゾンビランドサガ</option>
+            <option value="lovelive">ラブライブ！サンシャイン!!</option>
+        </select>
+    </div>
+
+    <!-- 地図 -->
+    <div id="map"></div>
+
+    <!-- 詳細パネル（オーバーレイ） -->
+    <div id="infoOverlay">
+        <div id="infoPanel">
+            <div id="infoPanelTop" class="info-panel-top"></div>
+            <button id="closePanel">×</button>
+            <div id="infoContent"></div>
+        </div>
+    </div>
+
+    <!-- フッターナビ -->
+        <div class="footer-nav">
+            <button onclick="location.href='index.html'"> ホーム</button>
+            <button onclick="location.href='butai.html'">マップ</button>
+            <button onclick="location.href='sinkisakusei.html'">計画</button>
+            <button onclick="location.href='stamp.html'">スタンプ</button>
+            <button onclick="location.href='hozon.html'">写真一覧</button>
+        </div>
+
+    <!-- あなたのスクリプト -->
+    <script src="js/butai-script.js"></script>
+</body>
+
+</html>

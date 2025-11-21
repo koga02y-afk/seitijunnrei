@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>スタンプ帳</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/stamp-style.css">
+</head>
+
+<body>
+
+  <header class="hero">
+    <h1>スタンプ帳</h1>
+  </header>
+
+  <div class="header">
+    <select id="workFilter">
+      <option value="">すべての作品</option>
+      <option value="zombielandsaga">ゾンビランドサガ</option>
+      <option value="lovelive">ラブライブ！サンシャイン!!</option>
+    </select>
+    <select id="visitFilter">
+      <option value="all">すべて表示</option>
+      <option value="visited">押印済みのみ</option>
+      <option value="unvisited">未訪問のみ</option>
+    </select>
+
+  </div>
+
+  <div id="stampGrid" class="stamp-grid"></div>
+
+  <div id="stampDetail" class="stamp-detail">
+    <div id="stampContent" class="modal-content"></div>
+  </div>
+
+    <div class="footer-nav">
+        <button onclick="location.href='index.html'"> ホーム</button>
+        <button onclick="location.href='butai.html'">マップ</button>
+        <button onclick="location.href='sinkisakusei.html'">計画</button>
+        <button onclick="location.href='stamp.html'">スタンプ</button>
+        <button onclick="location.href='hozon.html'">写真一覧</button>
+    </div>
+
+  <script src="js/stamp-script.js"></script>
+</body>
+
+</html>

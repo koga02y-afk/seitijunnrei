@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>スケジュール編集</title>
+    <link rel="stylesheet" href="css/style-schedulei.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+</head>
+
+<body>
+    <button id="backBtn" onclick="history.back()">← 戻る</button>
+    <h1 id="planTitle">📅 スケジュール</h1>
+    <button id="toggleMapBtn">🗺️ 地図を表示</button>
+
+    <div id="mainLayout">
+        <div id="leftPanel">
+            <div id="dayTabs"></div>
+            <div id="spotSelector">
+                <label>アニメ作品：</label>
+                <select id="animeSelect">
+                    <option value="">選択してください</option>
+                    <option value="zombielandsaga">ゾンビランドサガ</option>
+                    <option value="lovelive">ラブライブ！</option>
+                </select>
+                <div id="spotList"></div>
+            </div>
+
+            <div id="scheduleArea"></div>
+
+            <div id="mapPanel" style="display: none;">
+                <h3>🗺️ 地図</h3>
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.min.js"></script>
+    <script src="js/schedule.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>アニメ作品検索</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <body>
+        <div class="hero">
+            <h2>作品の舞台を歩く旅</h2>
+        </div>
+        <div class="container">
+            <h1>聖地巡礼</h1>
+            <h1>アニメ作品検索</h1>
+            <input type="text" id="searchInput" placeholder="作品名を入力してください">
+            <div id="animeList" class="grid"></div>
+        </div>
+
+        <script>
+            const animeData = [
+                { title: "結城友奈は勇者である", image: "images/yuyuyu.jpg", link: "yuukiyuunahayuusyadearu.html" },
+                { title: "ゾンビランドサガ", image: "images/zonbi.jpg", link: "zonbirandosaga.html" },
+                { title: "ラブライブ！", image: "images/raburaibu.jpg" },
+                { title: "ラブライブ！ サンシャイン‼", image: "images/raburaibu sansyain.jpg" },
+
+            ];
+
+            const input = document.getElementById("searchInput");
+            const list = document.getElementById("animeList");
+
+            function renderList(data) {
+                list.innerHTML = "";
+                data.forEach(item => {
+                    const card = document.createElement("div");
+                    card.className = "card";
+                    card.innerHTML = `
+      <a href="${item.link}" class="card-link">
+        <img src="${item.image}" alt="${item.title}">
+        <h3>${item.title}</h3>
+      </a>
+    `;
+                    list.appendChild(card);
+                });
+            }
+
+
+            // 初期表示：全作品を表示
+            renderList(animeData);
+
+            input.addEventListener("input", function () {
+                const keyword = this.value.trim();
+                if (keyword === "") {
+                    renderList(animeData); // 空なら全表示
+                    return;
+                }
+
+                const results = animeData.filter(item =>
+                    item.title.includes(keyword)
+                );
+
+                list.innerHTML = "";
+
+                if (results.length === 0) {
+                    list.innerHTML = "<p>該当作品が見つかりません。</p>";
+                    return;
+                }
+
+                renderList(results);
+            });
+        </script>
+
+
+
+        <footer>
+            <p>&copy; 2025 Seichi Journey</p>
+        </footer>
+
+        <script src="script.js"></script>
+
+        <div class="footer-nav">
+            <button onclick="location.href='index.html'"> ホーム</button>
+            <button onclick="location.href='butai.html'">マップ</button>
+            <button onclick="location.href='sinkisakusei.html'">計画</button>
+            <button onclick="location.href='stamp.html'">スタンプ</button>
+            <button onclick="location.href='hozon.html'">写真一覧</button>
+        </div>
+    </body>
+
+</html>

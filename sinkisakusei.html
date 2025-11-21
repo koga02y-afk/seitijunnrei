@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>アニメ旅行計画</title>
+    <link rel="stylesheet" href="css/sinkisakusei.css">
+</head>
+
+<body>
+    <h1>🎌 アニメ旅行計画一覧</h1>
+    <div id="planList"></div>
+
+    <!-- 新規作成ボタン（右下に丸く配置） -->
+    <button id="newPlanBtn">＋</button>
+
+    <!-- モーダル -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2>新しい旅行計画</h2>
+            <input type="text" id="title" placeholder="タイトル">
+            <input type="date" id="startDate">
+            <input type="date" id="endDate">
+
+            <label for="animeSelect">アニメ作品：</label>
+            <select id="animeSelect">
+                <option value="">作品を選択</option>
+                <option value="zombielandsaga">ゾンビランドサガ</option>
+                <option value="lovelive">ラブライブ！サンシャイン!!</option>
+            </select>
+
+            <button id="createPlan">作成</button>
+            <button id="closeModal">キャンセル</button>
+        </div>
+    </div>
+
+    <div class="footer-nav">
+        <button onclick="location.href='index.html'"> ホーム</button>
+        <button onclick="location.href='butai.html'">マップ</button>
+        <button onclick="location.href='sinkisakusei.html'">計画</button>
+        <button onclick="location.href='stamp.html'">スタンプ</button>
+        <button onclick="location.href='hozon.html'">写真一覧</button>
+    </div>
+
+    <script src="js/sinkisakusei.js"></script>
+</body>
+
+</html>
